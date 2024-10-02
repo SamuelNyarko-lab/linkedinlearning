@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:linkedinlearning/screens/chatpage.dart';
 import 'package:linkedinlearning/screens/loginpage.dart';
 
 void main() {
@@ -20,8 +21,9 @@ class MyApp extends StatelessWidget {
           background: Colors.white,
         ),
       ),
-      home: LoginPage(),
-     /// routes: ,
+      home: ChatPage(),
+
+      /// routes: ,
     );
   }
 }
