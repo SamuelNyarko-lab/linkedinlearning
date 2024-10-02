@@ -16,14 +16,20 @@ class MyApp extends StatelessWidget {
       title: 'Flutter wirh LinkedInLearning',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(
-          background: Colors.white,
-        ),
-      ),
-      home: ChatPage(),
-
-      /// routes: ,
+          colorScheme:
+              ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(
+            background: Colors.white,
+          ),
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.lightBlue,
+            foregroundColor: Colors.black,
+          )),
+      home: LoginPage(),
+      //adding named routed
+      routes: {
+        '/login': (context) => LoginPage(),
+        '/chat': (context) => ChatPage(),
+      },
     );
   }
 }

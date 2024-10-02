@@ -1,11 +1,12 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:linkedinlearning/utils/utils.dart';
 import 'package:linkedinlearning/widgets/chat_bubble.dart';
 import 'package:linkedinlearning/widgets/chat_input.dart';
 
 class ChatPage extends StatefulWidget {
-  const ChatPage({super.key});
-
+  ChatPage({super.key});
+  String? username;
   @override
   State<ChatPage> createState() => _ChatPageState();
 }
@@ -13,20 +14,23 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
+    widget.username = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: const Text(
-          'Hi Samuel!',
-          style: TextStyle(
+        title: Text(
+          'Hi ${widget.username}',
+          style: const TextStyle(
             color: Colors.black,
           ),
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, '/login');
+            },
             icon: const Icon(
               Icons.logout,
               color: Colors.black,
@@ -42,7 +46,7 @@ class _ChatPageState extends State<ChatPage> {
                 child: ListView.builder(
                     itemCount: 5,
                     itemBuilder: ((context, index) {
-                      return ChatBubble(
+                      return const ChatBubble(
                           message: 'Hi Samuel, this is your message');
                     }))),
 

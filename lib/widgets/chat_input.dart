@@ -1,9 +1,11 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class ChatInput extends StatelessWidget {
-  const ChatInput({super.key});
+  ChatInput({super.key});
+
+  TextEditingController chatInputController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +24,26 @@ class ChatInput extends StatelessWidget {
               color: Colors.white,
             ),
           ),
+          Expanded(
+              child: TextField(
+            controller: chatInputController,
+            keyboardType: TextInputType.multiline,
+            style: const TextStyle(
+              color: Colors.white,
+            ),
+            maxLines: 3,
+            minLines: 1,
+            cursorColor: Colors.white,
+            decoration: const InputDecoration(
+                hintText: 'Type your message',
+                hintStyle: TextStyle(
+                  color: Colors.grey,
+                ),
+                fillColor: Colors.white,
+                border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                )),
+          )),
           IconButton(
             onPressed: () {},
             icon: const Icon(
