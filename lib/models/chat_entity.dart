@@ -1,10 +1,25 @@
 import 'package:linkedinlearning/models/author.dart';
 
 class ChatEntity {
-  final String username;
   final String id;
-  final int timeStamp;
+  final String timeStamp;
+  final String imageUrl;
+  final String chatMessage;
   Author author;
 
-  ChatEntity({required this.id, required this.timeStamp, required this.username, required this.author});
+  ChatEntity(
+      {required this.imageUrl,
+      required this.chatMessage,
+      required this.id,
+      required this.timeStamp,
+      required this.author});
+
+  factory ChatEntity.fromJson(Map<String, dynamic> json) {
+    return ChatEntity(
+        imageUrl: json['imageUrl'],
+        chatMessage: json['chatMessage'],
+        id: json['id'],
+        timeStamp: json['timeStamp'],
+        author: Author.fromJson(json['author']));
+  }
 }

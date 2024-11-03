@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:linkedinlearning/models/chat_entity.dart';
 
 import '../utils/utils.dart';
 
 class ChatBubble extends StatelessWidget {
-  final String message;
-  const ChatBubble({super.key, required this.message});
+  final ChatEntity chatEntity;
+  const ChatBubble({super.key, required this.chatEntity});
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +22,20 @@ class ChatBubble extends StatelessWidget {
       ),
       margin: padding(24),
       padding: padding(24),
-      child:  Text(
-        message,
-        style: const TextStyle(
-          color: Colors.white,
-          fontSize: 18,
-        ),
+      child: Column(
+        children: [
+          Text(
+            chatEntity.chatMessage,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+            ),
+          ),
+          // if (chatEntity.imageUrl != null)
+          //   SizedBox(
+          //       height: 70,
+          //       child: Image.network(chatEntity.imageUrl, fit: BoxFit.cover)),
+        ],
       ),
     );
   }

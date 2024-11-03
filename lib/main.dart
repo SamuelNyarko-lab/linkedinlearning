@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter wirh LinkedInLearning',
+      title: 'Flutter with LinkedInLearning',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           colorScheme:
