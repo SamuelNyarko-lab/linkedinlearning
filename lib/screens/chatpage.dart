@@ -65,33 +65,29 @@ class _ChatPageState extends State<ChatPage> {
           ),
         ],
       ),
-      body: Container(
-        decoration: const BoxDecoration(),
-        child: Column(
-          children: [
-            Flexible(
-                child: ListView.builder(
-                    itemCount: messages.length,
-                    itemBuilder: ((context, index) {
-                      return ChatBubble(
-                        alignment: messages[index].author.username == 'Sam'
-                            ? Alignment.centerRight
-                            : Alignment.centerLeft,
-                        chatEntity: ChatEntity(
-                            imageUrl: messages[index].imageUrl,
-                            chatMessage:
-                                'Hello this is ${messages[index].author.username}',
-                            id: messages[index].id,
-                            timeStamp: messages[index].timeStamp,
-                            author:
-                                Author(username: widget.username.toString())),
-                      );
-                    }))),
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Expanded(
+              child: ListView.builder(
+                  itemCount: messages.length,
+                  itemBuilder: ((context, index) {
+                    return ChatBubble(
+                      alignment: messages[index].author.username == 'Sam'
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
+                      chatEntity: ChatEntity(
+                          imageUrl: messages[index].imageUrl,
+                          chatMessage: messages[index].chatMessage,
+                          id: messages[index].id,
+                          timeStamp: messages[index].timeStamp,
+                          author: Author(username: widget.username.toString())),
+                    );
+                  }))),
 
-            //creating the chat input field
-            ChatInput()
-          ],
-        ),
+          //creating the chat input field
+          ChatInput()
+        ],
       ),
     );
   }

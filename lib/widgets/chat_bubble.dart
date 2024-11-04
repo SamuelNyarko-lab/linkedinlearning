@@ -6,27 +6,30 @@ import '../utils/utils.dart';
 class ChatBubble extends StatelessWidget {
   final ChatEntity chatEntity;
   final Alignment alignment;
-  const ChatBubble({super.key, required this.chatEntity, required this.alignment});
+  const ChatBubble(
+      {super.key, required this.chatEntity, required this.alignment});
 
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: alignment,
       child: Container(
-        //height: 40,
-        width: deviceWidth(context) * 0.7,
-        alignment: Alignment.centerLeft,
+        // alignment: Alignment.centerLeft,
+        constraints: BoxConstraints(
+          maxWidth: deviceWidth(context) * 0.7,
+        ),
         decoration: const BoxDecoration(
           color: Colors.grey,
           borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(5),
-            topRight: Radius.circular(5),
-            bottomLeft: Radius.circular(5),
+            topLeft: Radius.circular(10),
+            topRight: Radius.circular(10),
+            bottomLeft: Radius.circular(10),
           ),
         ),
-        margin: padding(24),
-        padding: padding(24),
+        margin: padding(18),
+        padding: padding(18),
         child: Column(
+          // mainAxisSize: MainAxisSize.min,
           children: [
             Text(
               chatEntity.chatMessage,
@@ -35,10 +38,10 @@ class ChatBubble extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
-            // if (chatEntity.imageUrl != null)
-            //   SizedBox(
-            //       height: 70,
-            //       child: Image.network(chatEntity.imageUrl, fit: BoxFit.cover)),
+            if (chatEntity.imageUrl != null)
+              SizedBox(
+                  height: 70,
+                  child: Image.network(chatEntity.imageUrl, fit: BoxFit.cover)),
           ],
         ),
       ),

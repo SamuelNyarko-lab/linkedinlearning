@@ -1,33 +1,32 @@
 [{
     "author": {
+        "username": "Sam"
+    },
+    "timeStamp": "2024-10-01 10:23:00",
+    "id": "1",
+    "chatMessage": "Hello bro, this is Sam. How are you doing?",    "imageUrl": "https://cdn.ghanaweb.com/country_images/GhIndSquareIMG.jpg"
+
+},{
+    "author": {
         "username": "Kweku"
     },
     "timeStamp": "2024-10-01 10:23:00",
     "id": "1",
-    "chatMessage": "Hello",    "imageUrl": "https://cdn.ghanaweb.com/country_images/GhIndSquareIMG.jpg"
-
+    "chatMessage": "Hello bro"
+},{
+    "author": {
+        "username": "Kweku"
+    },
+    "timeStamp": "2024-10-01 10:23:00",
+    "id": "1",
+    "chatMessage": "I'm good and you?",
+    "imageUrl": "https://cdn.ghanaweb.com/country_images/GhIndSquareIMG.jpg"
 },{
     "author": {
         "username": "Sam"
     },
     "timeStamp": "2024-10-01 10:23:00",
     "id": "1",
-    "chatMessage": "Hello Guy",
-    "imageUrl": "https://cdn.ghanaweb.com/country_images/GhIndSquareIMG.jpg"
-},{
-    "author": {
-        "username": "Emma"
-    },
-    "timeStamp": "2024-10-01 10:23:00",
-    "id": "1",
-    "chatMessage": "Hello",
-    "imageUrl": "https://cdn.ghanaweb.com/country_images/GhIndSquareIMG.jpg"
-},{
-    "author": {
-        "username": "Kofi"
-    },
-    "timeStamp": "2024-10-01 10:23:00",
-    "id": "1",
-    "chatMessage": "Hello",
+    "chatMessage": "I'm good too, thanks",
     "imageUrl": "https://cdn.ghanaweb.com/country_images/GhIndSquareIMG.jpg"
 }]
