@@ -3,7 +3,7 @@ import 'package:linkedinlearning/models/author.dart';
 class ChatEntity {
   final String id;
   final String timeStamp;
-  final String imageUrl;
+  final dynamic imageUrl; //Changed this from String to dynamic to solve Null type exception
   final String chatMessage;
   Author author;
 
@@ -14,7 +14,7 @@ class ChatEntity {
       required this.timeStamp,
       required this.author});
 
-  factory ChatEntity.fromJson(Map<String, dynamic> json) {
+  factory ChatEntity.fromJson(Map<dynamic, dynamic> json) {
     return ChatEntity(
         imageUrl: json['imageUrl'],
         chatMessage: json['chatMessage'],

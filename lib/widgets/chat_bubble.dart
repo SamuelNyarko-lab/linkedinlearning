@@ -40,8 +40,12 @@ class ChatBubble extends StatelessWidget {
             ),
             if (chatEntity.imageUrl != null)
               SizedBox(
-                  height: 70,
-                  child: Image.network(chatEntity.imageUrl, fit: BoxFit.cover)),
+                height: 100,
+                child: Image.asset(
+                  chatEntity.imageUrl,
+                  fit: BoxFit.fill,
+                ),
+              ),
           ],
         ),
       ),
