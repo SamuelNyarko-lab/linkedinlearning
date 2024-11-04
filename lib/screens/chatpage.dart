@@ -74,6 +74,9 @@ class _ChatPageState extends State<ChatPage> {
                     itemCount: messages.length,
                     itemBuilder: ((context, index) {
                       return ChatBubble(
+                        alignment: messages[index].author.username == 'Sam'
+                            ? Alignment.centerRight
+                            : Alignment.centerLeft,
                         chatEntity: ChatEntity(
                             imageUrl: messages[index].imageUrl,
                             chatMessage:
