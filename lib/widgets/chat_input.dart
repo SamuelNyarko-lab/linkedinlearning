@@ -1,11 +1,23 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:linkedinlearning/models/author.dart';
+import 'package:linkedinlearning/models/chat_entity.dart';
 
 class ChatInput extends StatelessWidget {
-  ChatInput({super.key});
-
+  final Function(ChatEntity) onSubmit;
   TextEditingController chatInputController = TextEditingController();
+  ChatInput({super.key, required this.onSubmit});
+
+  onSendButton() {
+    final newMessage = ChatEntity(
+      chatMessage: chatInputController.text.trim(),
+      id: '23',
+      timeStamp: DateTime.now().microsecondsSinceEpoch.toString(),
+      author: Author(username: 'Sam'),
+    );
+    onSubmit(newMessage);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +57,9 @@ class ChatInput extends StatelessWidget {
                 )),
           )),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              onSendButton();
+            },
             icon: const Icon(
               Icons.send,
               color: Colors.white,

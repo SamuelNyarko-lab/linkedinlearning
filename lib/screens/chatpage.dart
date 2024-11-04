@@ -32,6 +32,12 @@ class _ChatPageState extends State<ChatPage> {
     // print(chatMessages);
   }
 
+  onMessageSent(ChatEntity chatEntity) {
+    setState(() {
+      messages.add(chatEntity);
+    });
+  }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -86,7 +92,9 @@ class _ChatPageState extends State<ChatPage> {
                   }))),
 
           //creating the chat input field
-          ChatInput()
+          ChatInput(
+            onSubmit: onMessageSent,
+          )
         ],
       ),
     );
